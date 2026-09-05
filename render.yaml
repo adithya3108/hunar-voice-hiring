@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: hunar-hiring-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: HUNAR_API_KEY
+        sync: false
+      - key: HUNAR_API_BASE_URL
+        value: https://api.voice.hunar.ai
+      - key: HUNAR_WEBHOOK_SECRET
+        sync: false
+      - key: HUNAR_FROM_PHONE_NUMBER
+        value: ""
+      - key: PDL_API_KEY
+        value: ""
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: anthropic/claude-sonnet-4.5
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: FRONTEND_ORIGIN
+        sync: false
