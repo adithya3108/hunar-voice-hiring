@@ -15,7 +15,7 @@ becomes a **voice-first, LLM-driven roll call**, not a tap-to-check-in flow.
 1. **One phone number per location** (or one shared organizational line with an
    IVR that first asks "which location code are you at?").
 2. **Twice-daily automated voice agent calls** to each location's phone at
-   fixed windows (e.g. 9:10am check-in, 6:10pm check-out) — the same
+   fixed windows (e.g. 9:10am check-in, 6:10pm check-out) , the same
    call-orchestration pattern as Task 1/2 (outbound call, LLM-driven
    conversation, structured result extraction).
 3. At each site, whoever picks up (a site supervisor or a designated point
@@ -39,10 +39,10 @@ becomes a **voice-first, LLM-driven roll call**, not a tap-to-check-in flow.
 - Every location already has *a* phone — no new hardware to distribute or
   train 1000 people on.
 - The LLM replaces the "app UI" entirely: instead of tapping a button, a
-  worker just says their name — zero literacy or device-skill requirement,
+  worker just says their name ; zero literacy or device-skill requirement,
   which also makes this more inclusive than an app would have been anyway.
 - Reuses the exact voice-agent infrastructure already built for Tasks 1 and 2
-  (outbound call, structured extraction, webhook-driven dashboard update) —
+  (outbound call, structured extraction, webhook-driven dashboard update) and 
   no separate system needed.
 
 ## Fallback / edge cases
@@ -59,8 +59,8 @@ becomes a **voice-first, LLM-driven roll call**, not a tap-to-check-in flow.
 
 ## What I'd explicitly avoid
 
-- Building a companion "app-like" web page for workers to visit — that
+- Building a companion "app-like" web page for workers to visit ,that
   reintroduces the smartphone/browser dependency the constraint rules out.
-- IVR-only (no LLM) — traditional DTMF ("press 1 for present") doesn't scale
+- IVR-only (no LLM) and  traditional DTMF ("press 1 for present") doesn't scale
   to calling out 1000 individual names per day; the LLM is what makes
   free-form spoken roll call parseable at this scale.
